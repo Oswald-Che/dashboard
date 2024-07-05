@@ -1,13 +1,26 @@
+@font-face {
+  font-family:roboto;
+  src: url(./fonts/Roboto-Regular.ttf);
+  --shift: 30px;
+}
+
 html, body{
   margin: 0px;
   padding: 0px;
+  font-family: roboto, sans-serif, serif, system-ui;
+  --shift: 25px;
 }
 
 ul{
   margin: 0px;
   padding: 0px;
+  list-style: none;
 }
-
+.sidebar ul{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 .dashboard{
   height: 100vh;
   display: grid;
@@ -15,11 +28,56 @@ ul{
   grid-template-rows: 1fr 5fr;
 }
 
+.nav ul li{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.support ul li{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  gap: 12px;
+}
+
+.icon{
+  height: 20px;
+  width: 20px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.dashboard-icon{
+  height: 40px;
+  width: 40px;
+  font-weight: 400;
+}
+
+.white{
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+.nav ,.support{
+  padding-left: var(--shift, 20px);
+}
 .sidebar{
-  height: auto;
-  grid-column: 1/2;
   grid-row: 1/3;
-  display: grid;
+  overflow: hidden;
+  padding-top: 15px;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  background-color: #0ea5e9;
+  color: white;
+  font-size: 1.3rem;
+  
 }
 
 .header{
