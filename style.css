@@ -1,0 +1,26 @@
+html, body{
+  margin: 0px;
+  padding: 0px;
+}
+
+.dashboard{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 5fr;
+}
+
+.sidebar{
+  grid-column: 1/2;
+  display: grid;
+  gap: 50px;
+}
+
+.header{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.container{
+  grid-row: 2/3;
+}
