@@ -1,7 +1,7 @@
 @font-face {
   font-family:roboto;
   src: url(./fonts/Roboto-Regular.ttf);
-  --shift: 30px;
+  --shift: 25px;
 }
 
 html, body{
@@ -9,6 +9,7 @@ html, body{
   padding: 0px;
   font-family: roboto, sans-serif, serif, system-ui;
   --shift: 25px;
+  --gap: 10px;
 }
 
 ul{
@@ -69,7 +70,6 @@ ul{
 }
 .sidebar{
   grid-row: 1/3;
-  overflow: hidden;
   padding-top: 15px;
   display: flex;
   gap: 50px;
@@ -79,21 +79,222 @@ ul{
   font-size: 1.3rem;
   
 }
-
+li{
+  font-weight: bold;
+}
 .header{
   grid-column: 2/3;
   grid-row: 1/2;
   display: grid;
   grid-template-columns: 2fr 1fr;
+  padding-left: 30px;
+  box-shadow: 5px 0 5px 5px lightgray;
 }
 
+.card-container{
+  display: grid;
+   grid-template-columns: repeat(2, 400px); 
+   gap: 30px;
+}
+.card{
+  height: 200px;
+  width: 400px;
+  background-color: white;
+  border-radius: 12px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: orange;
+  box-shadow: 1px 1px 2px 2px lightgrey;
+}
+
+.card > div{
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 0px 8px 8px 0px;
+  height: 100%;
+  width: 98%;
+  background-color: white;
+  padding: 30px 10px 20px 20px;
+}
+
+.card-title + p{
+  font-size: 0.9rem;
+  color: grey;
+}
+.card-icon{
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  gap: 20px;
+}
+
+.card-title{
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.profile-picture-small{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: aquamarine;
+}
+.profile-picture-large{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: aquamarine;
+}
+p{
+  margin: 0px;
+  padding: 0px;
+}
+
+.notification{
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  gap: 10px;
+}
+
+.profile{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 800;
+}
+.search{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+input#find{
+  height: 20px;
+  width: 500px;
+  border: 1px solid #E5E7EB;
+  background-color: #E5E7EB;
+  border-radius: 15px;
+}
+
+input:focus{
+  outline: none;
+  border: 2px solid  grey;
+  box-shadow: 2px 2px 4px rgb(146, 164, 175);
+}
+
+button{
+  height: 40px;
+  width: 100px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  background-color: #0ea5e9;
+  border-radius: 20px;
+}
+
+
+.update-buttons ul{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.profile .profile-name{
+  font-size: 1.3rem;
+}
+.update-buttons{
+  display: flex;
+  align-items: center;
+}
 .container{
   grid-row: 2/3;
+  box-sizing: border-box;
+  padding-top: 30px;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 50px;
   grid-template-rows: 1fr 1fr;
+  background-color: #e2e8f0;
+  z-index: -10;
 }
 
-.projects{
+.project{
   grid-row: 1/3;
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.announcements{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.announcements-container{
+  width: max(210px, 60%);
+  box-sizing: border-box;
+  padding: 25px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 1px 1px 2px 2px lightgrey;
+}
+
+.announcements-container p{
+  font-size: 0.7rem;
+  padding: 0;
+  margin: 0;
+  color: grey;
+  text-shadow: 0.4px 0.4px 0.8px grey;
+}
+
+.announcements-container div:first-child{
+  padding-bottom: 20px;
+}
+
+.announcements-container div:nth-child(2){
+  padding: 20px 0 20px 0;
+}
+
+.announcements-container div:last-child{
+  padding-top: 20px;
+}
+
+.announcements-container div:nth-child(-n + 2){
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: grey;
+}
+.announcements-container span{
+  font-size: 1.1rem;
+  font-family: 800;
+  text-shadow: 1px 1px 1px grey;
+}
+
+.trending{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.trending-container{
+  background-color: white;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: max(210px, 60%);
+  border-radius: 12px;
+  box-shadow: 1px 1px 2px 2px lightgrey;
+}
+.trending-item{
+  display: flex;
+  gap: 5px;
+}
+
+.title{
+  font-size: 1.3rem;
+  font-weight: 800;
 }
